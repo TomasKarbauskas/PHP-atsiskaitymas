@@ -53,6 +53,8 @@
 //      Destination "New York"
 //      ...
 
+//4. Pakoreguokite 3 užduotį taip, kad ji duomenis rašytų ne į terminalą, o spausdintų į failą. (1.5 balas)
+
    $holidays = [
        [
            'title' => 'Romantic Paris',
@@ -67,8 +69,8 @@
            'tourists' => 21,
        ],
        [
-           'title' => 'Spectacular Sydey',
-           'destination' => 'Sydey',
+           'title' => 'Spectacular Sydney',
+           'destination' => 'Sydney',
            'price' => 4130,
            'tourists' => 9,
        ],
@@ -103,6 +105,7 @@ $forDuplicateCities = [];
 
 $forDuplicateCalculations = [];
 $forTitleManipulation = [];
+$forOutput = [];
 
     foreach ($duplicateCities as $city) {
         foreach ($holidays as $key => $value) {
@@ -125,8 +128,9 @@ $forTitleManipulation = [];
 
         }
     }
-    echo 'Destination ' . '"' . $destination . '"' . PHP_EOL . 'Titles: ' . $titlesOutput .
+    $outputDoublesValue = 'Destination ' . '"' . $destination . '"' . PHP_EOL . 'Titles: ' . $titlesOutput .
         PHP_EOL . 'Total: ' . $total . PHP_EOL . '************' . PHP_EOL;
+    $forOutput[] = $outputDoublesValue;
 
 
    if (!empty($holidays)) {
@@ -134,8 +138,11 @@ $forTitleManipulation = [];
         $titleHolidays = $value['title'];
         $destination = $value['destination'];
         $total = $value['price'] * $value['tourists'];
-        echo 'Destination ' . '"' . $destination . '"' . PHP_EOL . 'Titles: ' . $titleHolidays .
+        $outputValue = 'Destination ' . '"' . $destination . '"' . PHP_EOL . 'Titles: ' . $titleHolidays .
             PHP_EOL . 'Total: ' . $total . PHP_EOL . '************' . PHP_EOL;
+        $forOutput[] = $outputValue;
         }
    };
+
+file_put_contents('PHP-atsiskaitymas/output-from-task-4.txt', $forOutput);
 
