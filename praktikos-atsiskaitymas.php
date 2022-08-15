@@ -53,96 +53,101 @@
 //      Destination "New York"
 //      ...
 
-//4. Pakoreguokite 3 užduotį taip, kad ji duomenis rašytų ne į terminalą, o spausdintų į failą. (1.5 balas)
+////4. Pakoreguokite 3 užduotį taip, kad ji duomenis rašytų ne į terminalą, o spausdintų į failą. (1.5 balas)
+//
+//   $holidays = [
+//       [
+//           'title' => 'Romantic Paris',
+//           'destination' => 'Paris',
+//           'price' => 1500,
+//           'tourists' => 55,
+//       ],
+//       [
+//           'title' => 'Amazing New York',
+//           'destination' => 'New York',
+//           'price' => 2699,
+//           'tourists' => 21,
+//       ],
+//       [
+//           'title' => 'Spectacular Sydney',
+//           'destination' => 'Sydney',
+//           'price' => 4130,
+//           'tourists' => 9,
+//       ],
+//       [
+//           'title' => 'Hidden Paris',
+//           'destination' => 'Paris',
+//           'price' => 1700,
+//           'tourists' => 10,
+//       ],
+//       [
+//           'title' => 'Emperors of the past',
+//           'destination' => 'Beijing',
+//           'price' => null,
+//           'tourists' => 10,
+//       ],
+//   ];
+//
+//    foreach ($holidays as $key => $value) {
+//        foreach ($value as $subKey => $subValue) {
+//            if ($subValue === null) {
+//               unset($holidays[$key]);
+//            }
+//        }
+//    }
+//
+//$forDuplicateCities = [];
+//    foreach ($holidays as $key => $value) {
+//        $forDuplicateCities[] = $value['destination'];
+//        $duplicateCities = array_diff_assoc($forDuplicateCities, array_unique($forDuplicateCities));
+//        $duplicateCities = array_unique($duplicateCities);
+//    }
+//
+//$forDuplicateCalculations = [];
+//$forTitleManipulation = [];
+//$forOutput = [];
+//
+//    foreach ($duplicateCities as $city) {
+//        foreach ($holidays as $key => $value) {
+//            if ($value['destination'] === $city) {
+//                unset($holidays[$key]);
+//                $forTitleManipulation[] = $value['title'];
+//                $titles = implode(',', $forTitleManipulation);
+//                $titlesOutput = '"' . str_replace(',', '", "', $titles) . '"';
+//
+//                $destination = $value['destination'];
+//
+//                $forDuplicateCalculations[] = $value;
+//
+//                $total = array_reduce($forDuplicateCalculations,
+//                    function (float $number, array $price) {
+//                    $priceTotal = $price['price'] * $price['tourists'];
+//                    return $number + $priceTotal;
+//                }, 0);
+//            }
+//
+//        }
+//    }
+//    $outputDoublesValue = 'Destination ' . '"' . $destination . '"' . PHP_EOL . 'Titles: ' . $titlesOutput .
+//        PHP_EOL . 'Total: ' . $total . PHP_EOL . '************' . PHP_EOL;
+//    $forOutput[] = $outputDoublesValue;
+//
+//
+//   if (!empty($holidays)) {
+//       foreach ($holidays as $key => $value) {
+//        $titleHolidays = $value['title'];
+//        $destination = $value['destination'];
+//        $total = $value['price'] * $value['tourists'];
+//        $outputValue = 'Destination ' . '"' . $destination . '"' . PHP_EOL . 'Titles: ' . $titleHolidays .
+//            PHP_EOL . 'Total: ' . $total . PHP_EOL . '************' . PHP_EOL;
+//        $forOutput[] = $outputValue;
+//        }
+//   };
+//
+//file_put_contents('PHP-atsiskaitymas/output-from-task-4.txt', $forOutput);
 
-   $holidays = [
-       [
-           'title' => 'Romantic Paris',
-           'destination' => 'Paris',
-           'price' => 1500,
-           'tourists' => 55,
-       ],
-       [
-           'title' => 'Amazing New York',
-           'destination' => 'New York',
-           'price' => 2699,
-           'tourists' => 21,
-       ],
-       [
-           'title' => 'Spectacular Sydney',
-           'destination' => 'Sydney',
-           'price' => 4130,
-           'tourists' => 9,
-       ],
-       [
-           'title' => 'Hidden Paris',
-           'destination' => 'Paris',
-           'price' => 1700,
-           'tourists' => 10,
-       ],
-       [
-           'title' => 'Emperors of the past',
-           'destination' => 'Beijing',
-           'price' => null,
-           'tourists' => 10,
-       ],
-   ];
 
-    foreach ($holidays as $key => $value) {
-        foreach ($value as $subKey => $subValue) {
-            if ($subValue === null) {
-               unset($holidays[$key]);
-            }
-        }
-    }
+//5. Parašykite programą, kuri Jūsų susigalvotus duomenis paimtų iš failo ir atspausdintų terminale. (1.5 balas)
+// sugalvoti duomenis = task4. output
 
-$forDuplicateCities = [];
-    foreach ($holidays as $key => $value) {
-        $forDuplicateCities[] = $value['destination'];
-        $duplicateCities = array_diff_assoc($forDuplicateCities, array_unique($forDuplicateCities));
-        $duplicateCities = array_unique($duplicateCities);
-    }
-
-$forDuplicateCalculations = [];
-$forTitleManipulation = [];
-$forOutput = [];
-
-    foreach ($duplicateCities as $city) {
-        foreach ($holidays as $key => $value) {
-            if ($value['destination'] === $city) {
-                unset($holidays[$key]);
-                $forTitleManipulation[] = $value['title'];
-                $titles = implode(',', $forTitleManipulation);
-                $titlesOutput = '"' . str_replace(',', '", "', $titles) . '"';
-
-                $destination = $value['destination'];
-
-                $forDuplicateCalculations[] = $value;
-
-                $total = array_reduce($forDuplicateCalculations,
-                    function (float $number, array $price) {
-                    $priceTotal = $price['price'] * $price['tourists'];
-                    return $number + $priceTotal;
-                }, 0);
-            }
-
-        }
-    }
-    $outputDoublesValue = 'Destination ' . '"' . $destination . '"' . PHP_EOL . 'Titles: ' . $titlesOutput .
-        PHP_EOL . 'Total: ' . $total . PHP_EOL . '************' . PHP_EOL;
-    $forOutput[] = $outputDoublesValue;
-
-
-   if (!empty($holidays)) {
-       foreach ($holidays as $key => $value) {
-        $titleHolidays = $value['title'];
-        $destination = $value['destination'];
-        $total = $value['price'] * $value['tourists'];
-        $outputValue = 'Destination ' . '"' . $destination . '"' . PHP_EOL . 'Titles: ' . $titleHolidays .
-            PHP_EOL . 'Total: ' . $total . PHP_EOL . '************' . PHP_EOL;
-        $forOutput[] = $outputValue;
-        }
-   };
-
-file_put_contents('PHP-atsiskaitymas/output-from-task-4.txt', $forOutput);
-
+echo file_get_contents('PHP-atsiskaitymas/output-from-task-4.txt');
