@@ -150,4 +150,40 @@
 //5. Parašykite programą, kuri Jūsų susigalvotus duomenis paimtų iš failo ir atspausdintų terminale. (1.5 balas)
 // sugalvoti duomenis = task4. output
 
-echo file_get_contents('PHP-atsiskaitymas/output-from-task-4.txt');
+//echo file_get_contents('PHP-atsiskaitymas/output-from-task-4.txt');
+
+
+//6. Parašykite programą, kuri per argumentų padavimą terminale paleidžiant funkciją
+//juos priimtų ir juos sudaugintų tarpusavyje ir pakeltu kvadratu.
+//Atkreipkite dėmesį, kad jeigu argumentas yra paduodamas ne skaičius,
+//reikia, kad terminale gautumėme atitinkamą klaidos kodą ir pranešimą. (2 balai)
+
+//simulated readline function
+if(!function_exists("readline")) {
+    function readline($prompt = null){
+        if($prompt){
+            echo $prompt;
+        }
+        $fp = fopen("php://stdin","r");
+        $line = rtrim(fgets($fp, 1024));
+        return $line;
+    }
+}
+
+$valueOne = readline('Enter value one: ');
+$valueTwo = readline('Enter value two: ');
+
+$numberOne = intval($valueOne);
+$numberTwo = intval($valueTwo);
+
+function value_calculation (int $nOne, int $nTwo): int
+{
+    return ($nOne * $nTwo) ** 2;
+};
+
+if($numberOne === 0 || $numberTwo === 0){
+    echo 'Error! value must be number greater than 0';
+} else {
+    echo value_calculation($valueOne, $valueTwo);
+};
+
