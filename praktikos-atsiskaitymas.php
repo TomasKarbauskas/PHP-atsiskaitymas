@@ -1,24 +1,44 @@
 <?php
 
-//1.  Grąžinkite visų lyginių skaičių, esančių $numbers masyve, sumą (1 balas)
+////1.  Grąžinkite visų lyginių skaičių, esančių $numbers masyve, sumą (1 balas)
+//   $numbers = [
+//       15,
+//       55,
+//       66,
+//       91,
+//       100,
+//       995,
+//       17,
+//       550,
+//   ];
+//
+//   $evenNumbers = [];
+//   foreach ($numbers as $key => $value){
+//       if ($value % 2 === 0){
+//           $evenNumbers[] = $value;
+//       }
+//   };
+//
+//   $sumOfEvenNumbers = array_sum($evenNumbers);
+//   echo $sumOfEvenNumbers;
+
+
+//2. Grąžinkite visų skaičių, esančių $numbers masyve, sandaugą (1 balas)
    $numbers = [
-       15,
-       55,
-       66,
-       91,
-       100,
-       995,
-       17,
-       550,
+       [1, 3, 5],
+       [55, 87, 100],
+       [12],
+       [],
    ];
 
-   $evenNumbers = [];
+   $nonMultidimensionalNumbers = [];
+
    foreach ($numbers as $key => $value){
-       if ($value % 2 === 0){
-           $evenNumbers[] = $value;
+       foreach ($value as $subKey => $subValue){
+           $nonMultidimensionalNumbers[] = $subValue;
        }
    };
 
-   $sumOfEvenNumbers = array_sum($evenNumbers);
-   echo $sumOfEvenNumbers;
+   $product = array_product($nonMultidimensionalNumbers);
+   echo $product;
 
