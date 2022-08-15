@@ -21,3 +21,4 @@
 
    $sumOfEvenNumbers = array_sum($evenNumbers);
    echo $sumOfEvenNumbers;
+
