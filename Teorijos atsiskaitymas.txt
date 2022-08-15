@@ -1,0 +1,100 @@
+1. Parašykite 1 būdą, kaip įvykdyti (paleisti) PHP script'ą iš komandinės eilutės.
+
+php -f direktorija/failo pavadinimas
+
+2. Kas privalo būti PHP failo pirmoje eilurėje, kad PHP žinotų,
+jog tolesnės eilutės yra PHP kodas?
+
+<?php
+
+3. Kokiais simboliais gali prasidėti PHP kintamojo pavadinimas (po $)?
+
+bet kokios mazosios raidės arba _ simbolis
+
+4. Ar simbolis % gali būti naudojamas PHP kintamojo pavadinime?
+
+ne
+
+5. Parašykite multiline PHP komentaro pavyzdį.
+
+/* pradžia ir pabaiga */
+
+
+6. Parašykite bent 4 duomenų tipus, naudojamus PHp kalboje.
+
+Skalariniai: int, float, string, boolean.
+Kompoziciniai: array, object.
+
+
+7. Paminėkite pagrindinė enumeratyvaus masyvo (indexed array) požymį, kuriuo jis skiriasi nuo asociatyvaus masyvo.
+
+enumeratyvaus masyvo raktai yra int tipo skaiciai o asociatyvaus string tipo raktai
+
+8. Turite kintamajį $someVariable = '15'. Pakeiskite jo tipą į 'int'.
+
+$someVariable = intval($someVariable);
+
+9. Kokia funkcija naudojama gauti masyvo narių skaičiui?
+
+masyvo narių skaičius = count(masyvas);
+
+10. Kas nutinka, kai bandome sukurti masyvą, kuris turi kelis narius,
+kurių raktai (keys) sutampa?
+
+Enumeratyviam masyvui raktai priskiriami automatiskai kiekvienam nariui unikalus
+int tipo raktas, pridejus naują narį su egzistuojanciu raktu masyve,
+kitoms reiksmėms suteikiamas naujas raktas kuris yra didziausia rakto reiksmė + 1.
+Asociatyviam masyve pridėtos reiksmės su tais pačiais raktais, tai
+vėliausia reiksmė perrašys prieš tai ėjusias.
+
+11. Parašykite multidimensinio masyvo pavyzdį.
+
+$masyvas = [
+šunys => [prancuzų-buldogas, vokiecių-aviganis],
+katės => [skotų-nulepausis, abisinijos]
+]
+
+12. Parašykite enumeryvaus masyvo pavyzdį.
+
+$numbers = [1,2,3,4,5]
+
+13. Koks operatorius yra naudojamas pridėti naują narį masyvui? Pateikite paprastą pavyzdį.
+
+$data = [];
+$data[] = 'naujas narys';
+
+14. Kokia funkcija naudojama panaikinti masyvo nariui?
+
+unset();
+
+15. Kokia funkcija naudotumėte pašalinti nereikalingus simbolius
+nuo string tipo reikšmės pradžios ir pabaigos (pvz:. "-test-" -> "test")?
+
+$string = '-test-';
+$newString = trim($string, '-');
+
+16. Kas laikoma superglobaliame kintamajame $_POST?
+
+Masyvo pavidalu saugo formos duomenis, kurias mes įrašėme į formą ir submitinome.
+
+17. Kas laikoma superglobaliame kintamajame $_FILES?
+
+Masyvo pavidalu failo metaduomenys
+pvz: name, type, tmp_name, error, size
+
+18. Git status komanda leidžia padaryti ką?
+
+Rodo pakeistus failus kurie turi skirtumų tarp originalaus failo ir dabartinio failo kuris yra Githube, kitaip rodomi pakeisti failai prieš commitinima.
+
+19. Git push komanda leidžia padaryti ką?
+
+Komanda ikelia failus i remote repositorija Gite iš lokalios saugyklos,
+pušinami failai pakeičia failus esančius git repositorijoje.
+
+20. Kas yra regex?
+
+Regular expression trumpinys, naudojamas pakeisti, surasti, apdoroti stringa, arba stringo dalį.
+Taip pat naudojamas validacijai, pvz: telefono numerio, arba emailo.
+Geras būdas tisksliai nurodyti patterna palei kurį vykdoma stringo paieška ir tolesni veiksmai.
+
+
